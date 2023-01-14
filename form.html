@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Informasi Profil Mahasiswa</title>
+	<link rel="stylesheet" type="text/css" href="form.css" />
+</head>
+
+<body>
+	<script src="createprofile.js"></script>
+	<div class="main">
+		<h3>Create a Profile</h3>
+		
+		<b id="errorInput">There was an error with your input</b>
+		<ul id="listError" type="disc">
+			<li id="fixFName">First Name may not contain numbers.<a onclick="document.myForm.FirstName.focus();" href=#FirstName>Fix it</a></li>
+			<li id="fixLName">Last Name May not contain numbers.<a onclick="document.myForm.LastName.focus();" href=#LastName>Fix it</a></li>
+			<li id="fixBirth">Date of Birth.<a onclick="document.myForm.month.focus();" href=#month,#day,#year>Fix it</a></li>
+			<li id="fixGender">Gender may not be blank.<a onclick="document.myForm.gender.focus();" href="#gender">Fix it</a></li>
+		</ul>
+		<!-- <b style="display:none;">There was an error with your input.</b> -->
+		<form name="myForm" id="form" onsubmit="return false">
+			<div class="form">
+				<label for="fname">First Name  :</label>
+				<input id="fname" name="FirstName" type="text">
+				<span id="errorFname">First Name may not contain numbers.</span>
+				<span id="blankFname">First Name may not be blank.</span>
+
+			</div>
+			<div class="form">
+				<label for="lname">Last Name  :</label>
+				<input id="lname" name="LastName" type="text">
+				<span id="errorLname">Last Name may not contain numbers.</span>
+				<span id="blankLname">Last Name may not be blank</span>
+			</div>
+			<div class="form">
+				<label>Date of Birth  :</label>
+				<select name="month" id="bulan">
+					<option value="0">month</option>
+					<option value="Januari">Januari</option>
+					<option value="Februari">Februari</option>
+					<option value="Maret">Maret</option>
+					<option value="April">April</option>
+					<option value="Mei">Mei</option>
+					<option value="Juni">Juni</option>
+					<option value="Juli">Juli</option>
+					<option value="Agustus">Agustus</option>
+					<option value="September">September</option>
+					<option value="Oktober">Oktober</option>
+					<option value="November">November</option>
+					<option value="Desember">Desember</option>
+				</select>
+				<select name="day" id="day">
+					<option value="0">day</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="3">15</option>
+					<option value="4">16</option>
+					<option value="5">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				<select name="year" id="year">
+					<option value="0">year</option>
+					<option value="1997">1997</option>
+					<option value="1998">1998</option>
+					<option value="1999">1999</option>
+					<option value="2000">2000</option>
+					<option value="2001">2001</option>
+					<option value="2002">2002</option>
+					<option value="2003">2003</option>
+					<option value="2004">2004</option>
+					<option value="2005">2005</option>
+					<option value="2006">2006</option>
+					<option value="2007">2007</option>
+				</select>
+				<span id="blankBirth">Date of Birth may not be blank</span>
+			</div>
+			<div class="form">
+				Gender    :
+				<label for="male">male</label>
+				<input id="male" type="radio" name="gender" value="male">
+				<label for="female">female</label>
+				<input id="female" type="radio" name="gender" value="female">
+				<span id="blankGender">Gender may not be blank</span>
+			</div>
+			<div class="form">
+				<label for="alamat">Address  :</label>
+				<input name="Address" id="alamat" cols="30" rows="1">
+			</div>
+			<div class="form">
+				<label for="phoneNumber">Phone number  :</label>
+				<input onkeydown="phoneNumberFormatter()"id="phoneNumber" >
+			</div>
+			<div class="form">
+				<label for="email">Email :</label>
+				<input type="text" name="" id="email" placeholder="Enter Email Address" onkeydown="emailvalid()">
+				<span id="text"></span>
+			</div>
+			<div class="button">
+				<button onclick="checkForm()" name="save" value="save">Save</button>
+			</div>
+		</form>
+		<p id="dFName">First Name: <span id="dFName2"></span></p>
+		<p id="dLName">Last Name: <span id="dLName2"></span></p>
+		<p id="dBirth">Date of Birth: <span id="dBirth2"></span></p>
+		<p id="dGender">Gender: <span id="dGender2"></span></p>
+		<p id="dAddress">Address: <span id="dAddress2"></span></p>
+		<p id="dPhone">Phone number: <span id="dPhone2"></span></p>
+		<p id="dEmail">Email: <span id="dEmail2"></span></p>
+	</div>
+</body>
+
+</html>
